@@ -14,7 +14,7 @@ parser.add_argument("-R", "--remove_package", dest="remove_package", metavar="pa
 args = parser.parse_args()
 if args.package_manager == "all":
     if args.update == True:
-        pacman.safe_upgrade()
+        pacman.full_upgrade()
     elif args.db_update == True:
         pacman.db_update
     elif args.remove_package != None:
@@ -23,10 +23,12 @@ if args.package_manager == "all":
         pacman.package_install(args.install_package)
 elif args.package_manager == "pacman":
     if args.update == True:
-        pacman.safe_upgrade()
+        pacman.full_upgrade()
     elif args.db_update == True:
         pacman.db_update
     elif args.remove_package != None:
         pacman.package_remove(args.remove_package)
     elif args.install_package != None:
         pacman.package_install(args.install_package)
+else:
+    print("The package manager", args.package_manager, "does not exist into the program, please pick a package manager that really exists")
