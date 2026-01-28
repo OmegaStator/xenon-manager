@@ -14,9 +14,9 @@ xenon-manager is an interpreter for multiple package managers, who never dreamt 
 
 ## Package managers that have experimental/partial support
 - pacman (archlinux)
+- paru (archlinux)
 
 ## Package managers that doesn't have support but that will have in the future
-- paru (archlinux)
 - yay (archlinux)
 - flatpak (generic)
 - apt (Debian)
@@ -24,16 +24,16 @@ xenon-manager is an interpreter for multiple package managers, who never dreamt 
 
 
 ## Features supported by xenon-manager for each package manager
-|__Features__                   |pacman                              |
-|-------------------------------|------------------------------------|
-|Package install                |✅                                  |
-|Package install (local package)|❌                                  |
-|Package remove                 |✅                                  |
-|Full update                    |✅                                  |
-|Database update                |✅                                  |
-|List packages (by name)        |❌                                  |
-|List packages (by size)        |❌ (no support from package manager)|
-|List packages (by install date)|❌ (no support from package manager)|
+|__Features__                   |pacman                              |paru|
+|-------------------------------|------------------------------------|----------------------------------|
+|Package install                |✅                                  |✅ (AUR only)                     |
+|Package install (local package)|❌                                  |❌                                |
+|Package remove                 |✅                                  |❌ (Already implemented in pacman)|
+|Full update                    |✅                                  |✅ (Aur only)                     |
+|Database update                |✅                                  |❌ (No database system in the AUR)|
+|List packages (by name)        |❌                                  |❌                                |
+|List packages (by size)        |❌ (no support from package manager)|❌                                |
+|List packages (by install date)|❌ (no support from package manager)|❌                                |
 
 
 
