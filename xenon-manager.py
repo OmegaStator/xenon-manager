@@ -12,7 +12,16 @@ parser.add_argument("-D", "--db-update", help="Refresh the database",action="sto
 parser.add_argument("-R", "--remove_package", dest="remove_package", metavar="package", help="Remove a program", type=str)
 
 args = parser.parse_args()
-if args.package_manager == "pacman":
+if args.package_manager == "all":
+    if args.update == True:
+        pacman.safe_upgrade()
+    elif args.db_update == True:
+        pacman.db_update
+    elif args.remove_package != None:
+        pacman.package_remove(args.remove_package)
+    elif args.install_package != None:
+        pacman.package_install(args.install_package)
+elif args.package_manager == "pacman":
     if args.update == True:
         pacman.safe_upgrade()
     elif args.db_update == True:
