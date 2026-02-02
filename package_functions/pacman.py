@@ -14,3 +14,6 @@ def package_install(package):
 
 def local_install(package):
     subprocess.call(['sudo', 'pacman', '-U', package])
+
+def list():
+    subprocess.call(['pacman', '-Q'])
