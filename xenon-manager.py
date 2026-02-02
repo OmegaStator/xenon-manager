@@ -11,6 +11,7 @@ parser.add_argument("-U", "--update", help="Refresh mirrors (see feature compati
 parser.add_argument("-I", "--install", dest="install_package", metavar="package", help="Install a program, can be a program name/ local package localisation", type=str)
 parser.add_argument("-D", "--db-update", help="Refresh the database",action="store_true")
 parser.add_argument("-R", "--remove_package", dest="remove_package", metavar="package", help="Remove a program", type=str)
+parser.add_argument("-L", "--list", help="List all installed apps for corresponding package manager", action="store_true" )
 
 args = parser.parse_args()
 if args.package_manager == "all":
