@@ -41,6 +41,5 @@ elif args.package_manager == "paru":
         print("This feature is not implemented since pacman can already do that")
     elif args.db_update == True:
         print("Feature not implemented as it's incompatible with the package manager")
-        
-
+else:
     print("The package manager", args.package_manager, "does not exist into the program, please pick a package manager that really exists")
