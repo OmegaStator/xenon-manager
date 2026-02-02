@@ -19,11 +19,7 @@ if args.package_manager == "all":
         pacman.full_upgrade()
     elif args.db_update == True:
         print("Updating pacman database...")
-        pacman.db_update
-    elif args.remove_package != None:
-        pacman.package_remove(args.remove_package)
-    elif args.install_package != None:
-        pacman.package_install(args.install_package)
+        pacman.db_update()
 elif args.package_manager == "pacman":
     if args.update == True:
         pacman.full_upgrade()
