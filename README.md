@@ -10,11 +10,10 @@ xenon-manager is an interpreter for multiple package managers, who never dreamt 
 - At least one compatible package manager
 
 ## Package managers that are compatible as of now
-
-
-## Package managers that have experimental/partial support
 - pacman (archlinux)
 - paru (archlinux)
+
+## Package managers that have experimental/partial support
 
 ## Package managers that doesn't have support but that will have in the future
 - yay (archlinux)
