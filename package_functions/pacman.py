@@ -11,3 +11,6 @@ def package_remove(package):
 
 def package_install(package):
     subprocess.call(['sudo', 'pacman', '-Sy', package])
+
+def local_install(package):
+    subprocess.call(['sudo', 'pacman', '-U', package])

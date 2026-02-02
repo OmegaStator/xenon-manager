@@ -27,7 +27,7 @@ xenon-manager is an interpreter for multiple package managers, who never dreamt 
 |__Features__                   |pacman                              |paru|
 |-------------------------------|------------------------------------|----------------------------------|
 |Package install                |✅                                  |✅ (AUR only)                     |
-|Package install (local package)|❌                                  |❌                                |
+|Package install (local package)|✅                                  |❌ (Already implemented in pacman)|
 |Package remove                 |✅                                  |❌ (Already implemented in pacman)|
 |Full update                    |✅                                  |✅ (Aur only)                     |
 |Database update                |✅                                  |❌ (No database system in the AUR)|

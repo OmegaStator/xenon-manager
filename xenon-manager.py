@@ -8,7 +8,7 @@ parser=ArgumentParser(
     epilog="Note : Package name must be BEFORE the options or else it won't work")
 parser.add_argument("package_manager", help="package managers that you want to apply the options to. You can take the following package managers : all, pacman, paru")
 parser.add_argument("-U", "--update", help="Refresh mirrors (see feature compatibility list in the readme) and do a full update",action="store_true")
-parser.add_argument("-I", "--install", dest="install_package", metavar="package", help="Install a program", type=str)
+parser.add_argument("-I", "--install", dest="install_package", metavar="package", help="Install a program, can be a program name/ local package localisation", type=str)
 parser.add_argument("-D", "--db-update", help="Refresh the database",action="store_true")
 parser.add_argument("-R", "--remove_package", dest="remove_package", metavar="package", help="Remove a program", type=str)
 
@@ -28,7 +28,10 @@ elif args.package_manager == "pacman":
     elif args.remove_package != None:
         pacman.package_remove(args.remove_package)
     elif args.install_package != None:
-        pacman.package_install(args.install_package)
+        if  "/" in args.install_package:
+            pacman.local_install(args.install_package)
+        else:
+            pacman.package_install(args.install_package)
 elif args.package_manager == "paru":
     if args.update == True:
         paru.aur_upgrade()
