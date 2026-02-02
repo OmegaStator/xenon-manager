@@ -25,15 +25,15 @@ xenon-manager is an interpreter for multiple package managers, who never dreamt 
 
 ## Features supported by xenon-manager for each package manager
 |__Features__                   |pacman                              |paru|
-|-------------------------------|------------------------------------|----------------------------------|
-|Package install                |✅                                  |✅ (AUR only)                     |
-|Package install (local package)|✅                                  |❌ (Already implemented in pacman)|
-|Package remove                 |✅                                  |❌ (Already implemented in pacman)|
-|Full update                    |✅                                  |✅ (Aur only)                     |
-|Database update                |✅                                  |❌ (No database system in the AUR)|
-|List packages (by name)        |❌                                  |❌                                |
-|List packages (by size)        |❌ (no support from package manager)|❌                                |
-|List packages (by install date)|❌ (no support from package manager)|❌                                |
+|-------------------------------|------------------------------------|------------------------------------|
+|Package install                |✅                                  |✅ (AUR only)                       |
+|Package install (local package)|✅                                  |❌ (Already implemented in pacman)  |
+|Package remove                 |✅                                  |❌ (Already implemented in pacman)  |
+|Full update                    |✅                                  |✅ (Aur only)                       |
+|Database update                |✅                                  |❌ (No database system in the AUR)  |
+|List packages (by name)        |✅                                  |❌ (Already implemented in pacman)  |
+|List packages (by size)        |❌ (no support from package manager)|❌ (no support from package manager)|
+|List packages (by install date)|❌ (no support from package manager)|❌ (no support from package manager)|
 
 
 
