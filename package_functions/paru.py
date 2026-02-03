@@ -1,7 +1,7 @@
 import subprocess
 
-def aur_upgrade():
+def upgrade():
     subprocess.call(['paru', '-Sua'])
 
-def aur_install(package):
+def install(package):
     subprocess.call(['paru', '-Sa', package])
