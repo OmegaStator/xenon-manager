@@ -2,7 +2,7 @@
 import os
 if os.path.exists('./config.ini') == False:
     print("Configuration doesn't exist, please run xenonConfig.py before trying to use xenon-manager")
-    exit
+    exit()
 del os     # Unloads os module, since it's not needed elsewhere
 
 import configparser
