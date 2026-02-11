@@ -9,8 +9,8 @@ import configparser
 config = configparser.ConfigParser()
 config.read('config.ini')
 
-if config['package.managers']['pacman'] == 'True':
-    from package_functions import pacman
+if config['package.managers']['native.pm'] == 'pacman':
+    from package_functions import pacman as native
 if config['package.managers']['aur.helper'] == 'paru':
     from package_functions import paru as aur
 elif config['package.managers']['aur.helper'] == 'yay':
@@ -26,7 +26,7 @@ parser=ArgumentParser(
     prog="xenon-manager",
     description="xenon-manager is a CLI tool that wants to be some sort of AIO package manager, although it really just manages the already existing package managers", 
     epilog="Note : Package name must be BEFORE the options or else it won't work")
-parser.add_argument("package_manager", help="package managers that you want to apply the options to. You can use the following package managers : all, pacman, aur")
+parser.add_argument("package_manager", help="package managers that you want to apply the options to. You can use the following package managers : all, native, aur")
 parser.add_argument("-U", "--update", help="Refresh mirrors (see feature compatibility list in the readme) and do a full update",action="store_true")
 parser.add_argument("-I", "--install", dest="install_package", metavar="package", help="Install a program, can be a program name/ local package localisation", type=str)
 parser.add_argument("-D", "--db-update", help="Refresh the database",action="store_true")
@@ -40,35 +40,35 @@ args = parser.parse_args()      # Short way to parse the arguments
 # Lets you launch operation on all the package managers at the same time
 if args.package_manager == "all":
     if args.update == True:
-        print("Updating pacman packages...")
-        pacman.full_upgrade()
+        print("Updating native packages...")
+        native.full_upgrade()
         if aur == None:
             print("No AUR helper found, skipping AUR helper")
         else:
             print("Updating AUR packages")
             aur.aur_upgrade()
     elif args.db_update == True:
-        print("Updating pacman database...")
-        pacman.db_update()
+        print("Updating native database...")
+        native.db_update()
     elif args.list == True:
-        print("Pacman packages :")
-        pacman.list()
+        print("native packages :")
+        native.list()
     else:
         print("Option not available")
 
-# Operations on pacman
-elif args.package_manager == "pacman" and config['package.managers']['pacman'] == 'True' :
+# Operations on the native package manager
+elif args.package_manager == "native" and config['package.managers']['native.pm'] != 'None' :
     if args.update == True:
-        pacman.full_upgrade()
+        native.full_upgrade()
     elif args.db_update == True:
-        pacman.db_update()
+        native.db_update()
     elif args.remove_package != None:
-        pacman.package_remove(args.remove_package)
+        native.package_remove(args.remove_package)
     elif args.install_package != None:
         if  "/" in args.install_package:    # Detects if the the install command cites a path to automatically pick local install
-            pacman.local_install(args.install_package)
+            native.local_install(args.install_package)
         else:
-            pacman.package_install(args.install_package)
+            native.package_install(args.install_package)
     else:
         print("option not available")
 

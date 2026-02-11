@@ -7,11 +7,11 @@ pm = config['package.managers']
 
 # Main package manager detecting mechanism
 if shutil.which("pacman") != None:
-    pm['pacman'] = 'True'
-    print("Pacman set to enabled")
+    pm['native.pm'] = 'pacman'
+    print("Native package manager was set to pacman")
 else:
-    pm['pacman'] = 'False'
-    print("Pacman set to disabled")
+    pm['native.pm'] = 'None'
+    print("Native package manager was disabled")
 
 # AUR package selector mechanism
 if shutil.which("paru") and shutil.which("yay") != None:
