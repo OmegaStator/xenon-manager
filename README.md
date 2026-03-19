@@ -58,8 +58,8 @@ options:
 |Full update                    |✅                                  |✅ (Aur only)                       |✅ (Aur only)                       |
 |Database update                |✅                                  |❌ (No database system in the AUR)  |❌ (No database system in the AUR)  |
 |List packages (by name)        |✅                                  |❌ (Already implemented in pacman)  |❌ (Already implemented in pacman)  |
-|List packages (by size)        |❌ (no support from package manager)|❌ (no support from package manager)|❌ (no support from package manager)|
-|List packages (by install date)|❌ (no support from package manager)|❌ (no support from package manager)|❌ (no support from package manager)|
+|List packages (by size)        |❌                                  |❌ (no support from package manager)|❌ (no support from package manager)|
+|List packages (by install date)|❌                                  |❌ (no support from package manager)|❌ (no support from package manager)|
 
 
 
